@@ -1,0 +1,119 @@
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family:Arial, Helvetica, sans-serif;
+}
+body{
+    /* display:flex; */
+}
+#btn{
+    display: flex;
+    height:500px;
+    align-items: center;
+}
+.btn{
+    font-size:18px;
+    background-color:transparent;
+    border:none;
+    padding: 8px 48px;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    min-width: 150px;
+}
+.btn +.btn {
+    margin-left: 16px;
+}
+.btn:hover{
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+.btn--success{
+    background-color: rgb(19, 199, 19);
+}
+.btn--warning{
+    background-color: rgb(253, 178, 16);
+}
+/* toast */
+#toast{
+    position: fixed;
+    top: 0;
+    right:32px;
+}
+.toast{
+    display:flex;
+    align-items: center;
+    box-shadow:0 4px 10px rgba(0, 0, 0, 0.1);
+    padding:12px 0;
+    border-left: 5px solid;
+    border-radius: 4px;
+    min-width: 450px;
+    max-width: 500px;
+    transition: all step-end 0.3s;
+    /*thiết lập cái này 
+                do xóa child  thì nó nhảy lên mạnh quá*/
+}
+@keyframes sliderInLeft {
+    from {
+        opacity:0;
+        transform:translateX(calc(100% + 32px));
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+@keyframes fadeOut {
+    to{
+        opacity:0;
+    }
+}
+.toast--success{
+    border-color:green;
+}
+.toast--success .toast--item{
+    color: green;
+}
+.toast--info{
+    border-color:rgb(7, 83, 223);
+}
+.toast--info .toast--item{
+    color: rgb(7, 83, 223);
+}
+.toast--warning{
+    border-color:rgb(253, 178, 16);
+}
+.toast--warning .toast--item{
+    color: rgb(253, 178, 16);
+}
+
+.toast--error{
+    border-color:rgb(230, 15, 8);
+}
+.toast--error .toast--item{
+    color: rgb(230, 15, 8);
+}
+.toast--close,
+.toast--item{
+    padding:0 16px;
+    border-radius: 50%;
+}
+.toast--body{
+    flex:1;
+    
+}
+.toast--title{
+    font-size:16px;
+    color:rgba(0, 0, 0, 0.8);
+    font-weight: 600;
+}
+.toast--message{
+    font-size:14px;
+    color:rgba(0, 0, 0, 0.6);
+
+}
+.toast--close{
+
+}
